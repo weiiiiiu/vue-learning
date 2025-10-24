@@ -56,12 +56,12 @@
        </div>
        <!--事件只触发一次-->
        <button @click.once="showInfo">点我提示信息,只在第一次点击生效</button>
-       <!-- capture事件的捕获模式 让事件以捕获的方式来处理(先捕获再冒泡)-->
+       <!-- capture事件的捕获模式 让事件以捕获的方式来处理(先捕获外层事件再冒泡) -->
        <div class="box1" @click.capture="showMsg(1)">
            div1
            <div class="box2" @click="showMsg(2)">div2</div>
        </div>
-       <!-- self 只有event.target是当前操作的元素时才触发事件(变相阻止冒泡)-->
+       <!-- self 只有event.target是当前操作的元素时才触发事件(变相阻止冒泡) 负责会产生冒泡-->
        <div class="demo1" @click.self="showInfo">
            <button @click="showInfo">点我提示信息</button>
        </div>
