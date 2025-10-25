@@ -21,7 +21,7 @@
                         左 => left
                         右 => right
 
-            2.Vue未提供别名的按键，可以使用按键原始的key值去绑定，但注意要转为kebab-case（短横线命名）
+            2.Vue未提供别名的按键，可以使用按键原始的key值去绑定，e.keyCode 但注意驼峰要转为kebab-case（短横线命名）
 
             3.系统修饰键（用法特殊）：ctrl、alt、shift、meta
                         (1).配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发。
@@ -32,7 +32,7 @@
             5.Vue.config.keyCodes.自定义键名 = 键码，可以去定制按键别名
     -->
   <div id="root">
-        <!--vue中键盘事件的绑定 一般用keyUp(keydown)-->
+        <!--vue中键盘事件的绑定 一般用keyUp(keydown) 不添加事件 默认会直接显示-->
         <h1>欢迎来到{{ name }}</h1>
         <input type="text" @keyup.enter="showInfo" placeholder="按下回车提示输入"/>
         <input type="text" @keyup.delete="showInfo" placeholder="退格或删除提示输入"/>
